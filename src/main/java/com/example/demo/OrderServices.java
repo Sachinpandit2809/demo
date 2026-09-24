@@ -1,9 +1,12 @@
 package com.example.demo;
 
 // import com.example.demo.Notification.EmailServices;
+
 import com.example.demo.Notification.NotificationServices;
 
-public class OrderServices {
+
+
+ class OrderServices {
     NotificationServices notificationServices ;
     OrderServices orderServices;
     PaymentServices pay;
