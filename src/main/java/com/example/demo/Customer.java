@@ -3,8 +3,8 @@ package com.example.demo;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Student {
+public class Customer {
     public void displayDetails(){
-        System.out.println("student details");
+        System.out.println("Customer details");
     }
 }

@@ -6,8 +6,13 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        Student s = context.getBean(Student.class);
-        s.displayDetails();
+        Customer customer = context.getBean(Customer.class);
+        PaymentServices paymentServices = context.getBean(PaymentServices.class);
+        OrderServices orderServices =  context.getBean(OrderServices.class);
+        orderServices.placedOrder();
+//        paymentServices.pay();
+        customer.displayDetails();
+
 
     }
 }
