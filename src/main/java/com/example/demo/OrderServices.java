@@ -1,5 +1,7 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Component;
+
 // import com.example.demo.Notification.EmailServices;
 
 import com.example.demo.Notification.NotificationServices;
