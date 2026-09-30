@@ -1,7 +1,10 @@
-package com.example.demo;
+// package com.example.demo;
 
-public class PaymentServices {
-    public void pay(){
-        System.out.println("Payment Done");
-    }
-}
+// import org.springframework.stereotype.Component;
+
+// @Component
+// public class PaymentServices {
+//     public void pay(){
+//         System.out.println("Payment Done");
+//     }
+// }

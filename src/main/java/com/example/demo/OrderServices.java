@@ -1,33 +1,42 @@
 package com.example.demo;
 
-// import com.example.demo.Notification.EmailServices;
-import com.example.demo.Notification.NotificationServices;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
-public class OrderServices {
+import com.example.demo.Notification.NotificationServices;
+import com.example.demo.Payment.PaymentServices;
+
+
+@Component
+ class OrderServices {
     NotificationServices notificationServices ;
     OrderServices orderServices;
+    // PaymentServices paymentServices ;
     PaymentServices pay;
     // setter
     public void setNotification(NotificationServices notification){
         this.notificationServices =  notification;
     }
-    public void setPaymentOrder(PaymentServices pay){
-        this.pay = pay;
-    }
+//    @Autowired
+//    public void setPaymentOrder(PaymentServices pay){
+//        this.pay = pay;
+//    }
     // constructor
-    public OrderServices(PaymentServices paymentServices){
+//    @Autowired
+    public OrderServices(@Qualifier("card") PaymentServices paymentServices){
         this.pay = paymentServices;
     }
-    public  OrderServices(NotificationServices notificationServices){
-        this.notificationServices = notificationServices;
-    }
+
+//    public  OrderServices(NotificationServices notificationServices){
+//        this.notificationServices = notificationServices;
+//    }
     // default constructor
 //    public OrderServices(){
 //
 //    }
      public void placedOrder(){
          System.out.println("Order Placed");
-         notificationServices.sendNotification();
+         pay.pay();
      }
 
      public void payOrder(){
