@@ -1,18 +1,17 @@
 package com.example.demo;
 
-import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
-// import com.example.demo.Notification.EmailServices;
-
 import com.example.demo.Notification.NotificationServices;
+import com.example.demo.Payment.PaymentServices;
 
 
 @Component
  class OrderServices {
     NotificationServices notificationServices ;
     OrderServices orderServices;
-//    @Autowired
+    // PaymentServices paymentServices ;
     PaymentServices pay;
     // setter
     public void setNotification(NotificationServices notification){
@@ -24,7 +23,7 @@ import com.example.demo.Notification.NotificationServices;
 //    }
     // constructor
 //    @Autowired
-    public OrderServices(PaymentServices paymentServices){
+    public OrderServices(@Qualifier("card") PaymentServices paymentServices){
         this.pay = paymentServices;
     }
 

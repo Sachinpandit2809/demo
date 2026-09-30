@@ -1,17 +1,21 @@
 package com.example.demo;
 
+import com.example.demo.User.User;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-        Customer customer = context.getBean(Customer.class);
-        PaymentServices paymentServices = context.getBean(PaymentServices.class);
-        OrderServices orderServices =  context.getBean(OrderServices.class);
-        orderServices.placedOrder();
-//        paymentServices.pay();
-        customer.displayDetails();
+//        Customer customer = context.getBean(Customer.class);
+//       // PaymentServices paymentServices = context.getBean(PaymentServices.class);
+//        OrderServices orderServices =  context.getBean(OrderServices.class);
+//        orderServices.placedOrder();
+////        paymentServices.pay();
+//        customer.displayDetails();
+
+        User us = context.getBean(User.class);
+        System.out.println(us.getName());
 
 
     }
